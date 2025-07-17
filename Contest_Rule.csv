@@ -1,23 +1,23 @@
 ﻿Segment,Code : Activity,Sub-category,Points
-A,A-1 : MyLCI – Monthly Report Submission on MyLCI,a. MM Report submitted by the end of each month,"10,000 per month"
-,,b. Report of service activities,"10,000 per month"
+A,A-1 : MyLCI – Monthly Report Submission on MyLCI,a. MM Report submitted by the end of each month,"10,000"
+,,b. Report of service activities,"10,000"
 ,,c. Report submission in MyLCI,"2,000"
-,A-2 : Member Details,"a. Number of members as per the membership list in July, according to MyLCI","2,000 per member"
-,,"b. Number of members as per the membership list in January, according to MyLCI","2,000 per member"
+,A-2 : Member Details,"a. Number of members as per the membership list in July, according to MyLCI","2,000"
+,,"b. Number of members as per the membership list in January, according to MyLCI","2,000"
 ,A-3 : Monthly Meeting,a. Regular meetings (maximum 2 meetings will be counted),"10,000"
 ,,b. Board meeting (maximum 1 meeting will be counted),"10,000"
 ,A-4 : Joint Meeting,a. Hosting club,"20,000"
 ,,b. Participating club,"10,000"
 ,A-5 : Payment of Sub-District Dues,a. If paid within the time specified by the district,"10,000"
 ,,b. If paid after the time specified by the district,"2,500"
-,A-6 : Membership Growth & Retention Class,a. Membership Growth,"1,000 per member increased"
-,,b. Membership Retention,500 per member retained
+,A-6 : Membership Growth & Retention Class,a. Membership Growth,"1,000"
+,,b. Membership Retention,500
 ,A-7 : Submission of Club Annual Action Plan (within July),,"10,000"
-,A-8 : Submission of Audit Report,,"10,000 (per year)"
+,A-8 : Submission of Audit Report,,"10,000"
 ,A-9 : Submission of Quarterly Activity Report,a. If submitted by the 15th of the designated month,"1,000"
 ,,b. If submitted by the end of the designated month,600
 ,A-10 : New Member Oath-taking Ceremony,a. Organizing the ceremony,5000
-,,b. Taking oath of new members (with ID number),10 per member
+,,b. Taking oath of new members (with ID number),10
 ,A-11 : Orientation Program,a. If completed by 30th September,10000
 ,,b. If completed by 30th November,5000
 ,,c. If completed after 1st December,2500
@@ -26,8 +26,8 @@ A,A-1 : MyLCI – Monthly Report Submission on MyLCI,a. MM Report submitted by t
 ,,b. Other clubs in municipal zone (club no. 135–),500
 ,,c. Clubs outside the country,2000
 ,,d. Attending uninvited as an observer,200
-,A-13 : Zone and Region Meeting Participation,"a. Zone meeting (President, VP, Secretary, Joint Secretary)",20000 per member
-,,"b. Region meeting (President, VP, Secretary, Joint Secretary)",20000 per member
+,A-13 : Zone and Region Meeting Participation,"a. Zone meeting (President, VP, Secretary, Joint Secretary)",20000
+,,"b. Region meeting (President, VP, Secretary, Joint Secretary)",20000
 ,A-14 : Honorary Meeting (once a year),a. Lead District President,25000
 ,,b. Lead District Membership Growth President & Vice President,15000
 ,,c. Lead District Secretary,8000
@@ -46,22 +46,21 @@ A,A-1 : MyLCI – Monthly Report Submission on MyLCI,a. MM Report submitted by t
 ,,"b. Submitting names of President, Delegate, and Alternate Delegate by deadline",5000
 ,A-19 : Data Development,a. Through club meeting minutes,5000
 ,,b. Through online Google Form,5000
-,,c. For clubs in remote areas with no other way to submit data,25 per point
+,,c. For clubs in remote areas with no other way to submit data,25
 ,A-20 : Publications,a. Souvenir,50000
 ,,b. Bulletin (minimum 1000 copies),50000
 ,A-21 : Publicity,a. In a local newspaper,5000
 ,,b. In a national newspaper,10000
-,A-22 : Schooling,If the club organizes a schooling event for members through the Zone President & District Growth President and Lions District Trainers,25000
-,A-23 : Carrying out local projects under Home Club's name,,500 per point
-B,"B-1 : Type-1 Local Project: The project must be funded entirely by the club or partially sponsored and must be named and branded under the club. A committee must be formed, and documentation including photos, a media report, and a financial report must be submitted within 30 days of completion. Eligible projects: 1. Health Camp 2. Eye Camp 3. Donation Program 4. Free or Adult Education Center 5. Permanent Help Desk",Inauguration,10000
+,A-22 : Schooling,,25000
+,A-23 : Carrying out local projects under Home Club's name,,500
+B,B-1 : Type-1 Local Project (Refer to contest rule for details),Inauguration,10000
 ,,Year-end,20000
-,"B-2 : Type-2 Local Project: The project may be fully or jointly funded. Must be named, branded, and publicized under the club's identity. Must include documentation (photos, report, financial summary) submitted within 30 days of completion. Eligible projects: 1. Health Camp 2. Eye Camp 3. Donation Program 4. Free or Adult Education Center 5. Permanent Help Desk",Inauguration,5000
+,B-2 : Type-2 Local Project (Refer to contest rule for details),Inauguration,5000
 ,,Year-end,10000
 C,C-1 : Support for Rehabilitation,,50000 points
 ,C-2 : Anti-Drug Program,a. Organizing a seminar,20000 points
 ,,"b. Poster, leaflet distribution (at least 1000 copies)",20000 points
-,C-3,Education Program,
-,,a. Organizing a school supply distribution event (minimum 15 students),20000 points
+,C-3 : Education Program,a. Organizing a school supply distribution event (minimum 15 students),20000 points
 ,,b. Providing scholarships,20000 points
 ,,"c. Organizing debates, quizzes, speeches, arts, handwriting, or general knowledge competitions",20000 points
 ,C-4,Health Service Camp,
