@@ -82,7 +82,7 @@ if st.session_state.activity_log:
     
     if st.button("❌ Delete Selected"):
         st.session_state.activity_log = [row for idx, row in enumerate(st.session_state.activity_log) if idx not in delete_indices]
-        st.experimental_rerun()
+        st.rerun()
 
     # Show table
     st.dataframe(log_df)
