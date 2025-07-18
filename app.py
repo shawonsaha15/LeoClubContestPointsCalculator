@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
+import io
+from PIL import Image
 
 # Load CSV with cleaned format
 @st.cache_data
@@ -10,18 +13,6 @@ def load_data():
 
 df = load_data()
 
-# Extract numeric value from Points (supports "per", "per member", etc.)
-def extract_points(point_str):
-    if pd.isna(point_str):
-        return 0
-    try:
-        digits = ''.join(c for c in str(point_str) if c.isdigit())
-        return int(digits) if digits else 0
-    except:
-        return 0
-
-df["Numeric Points"] = df["Points"].apply(extract_points)
-
 st.title("🏆 Leo Club Contest Points Calculator")
 
 if "activity_log" not in st.session_state:
@@ -29,12 +20,12 @@ if "activity_log" not in st.session_state:
 
 # 1. Select Segment
 segments = df["Segment"].dropna().unique()
-segment = st.selectbox("1️⃣ Select Segment", segments)
+segment = st.selectbox("Select Segment", segments)
 
 # 2. Select Code + Activity
 activity_df = df[df["Segment"] == segment]
 codes = activity_df["Code : Activity"].dropna().unique()
-code = st.selectbox("2️⃣ Select Code and Activity", codes)
+code = st.selectbox("Select Code and Activity", codes)
 
 code_df = activity_df[activity_df["Code : Activity"] == code]
 
@@ -45,12 +36,12 @@ selected_points = 0
 
 if has_sub_categories and len(code_df) > 1:
     sub_options = code_df["Sub-category"].dropna().unique()
-    selected_sub = st.selectbox("3️⃣ Select Sub-category", sub_options)
+    selected_sub = st.selectbox("Select Sub-category", sub_options)
     sub_row = code_df[code_df["Sub-category"] == selected_sub].iloc[0]
-    selected_points = sub_row["Numeric Points"]
+    selected_points = sub_row["Points"]
 else:
     selected_sub = code_df.iloc[0]["Code : Activity"]
-    selected_points = code_df.iloc[0]["Numeric Points"]
+    selected_points = code_df.iloc[0]["Points"]
     
 # 6. Show allocated points as a note (help text)
 st.text_input(
@@ -62,14 +53,14 @@ st.text_input(
 )
 
 # 6. Number of times activity was done
-count = st.number_input("5️⃣ Enter how many times this activity was done", min_value=1, value=1)
+count = st.number_input("Enter how many times this activity was done", min_value=1, value=1)
 
 # 7. Multiply for total
 total_points = selected_points * count
 st.markdown(f"**🧮 Points: {selected_points} × {count} = {total_points}**")
 
 # 7. Add to table
-if st.button("➕ Add to Activity Log"):
+if st.button("➕ Add to Activity Table"):
     st.session_state.activity_log.append({
         "Segment": segment,
         "Code": code,
@@ -80,8 +71,34 @@ if st.button("➕ Add to Activity Log"):
     })
 
 # 8 & 9. Show table and total
+# If there are activity logs to display
 if st.session_state.activity_log:
     log_df = pd.DataFrame(st.session_state.activity_log)
+
     st.subheader("📋 Activity Summary Table")
+
+    # Show deletable rows with checkboxes
+    delete_indices = st.multiselect("🗑️ Select rows to delete", log_df.index, format_func=lambda i: f"{log_df.loc[i, 'Activity']} ({log_df.loc[i, 'Total Points']} pts)")
+    
+    if st.button("❌ Delete Selected"):
+        st.session_state.activity_log = [row for idx, row in enumerate(st.session_state.activity_log) if idx not in delete_indices]
+        st.experimental_rerun()
+
+    # Show table
     st.dataframe(log_df)
+
+    # Total points
     st.markdown(f"### 🔢 **Total Points: {log_df['Total Points'].sum()}**")
+
+    # Download as image
+    def df_to_image(df):
+        fig, ax = plt.subplots(figsize=(10, len(df) * 0.6 + 1))
+        ax.axis('off')
+        ax.table(cellText=df.values, colLabels=df.columns, cellLoc='center', loc='center')
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png', bbox_inches='tight', dpi=150)
+        buf.seek(0)
+        return buf
+
+    img_buf = df_to_image(log_df)
+    st.download_button("📥 Download Table as Image", data=img_buf, file_name="activity_log.png", mime="image/png")
